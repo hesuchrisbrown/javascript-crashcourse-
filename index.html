@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS If Condition</title>
+</head>
+<body>
+    Helloweerh  h
+    <script>
+       const students = [ // Fixed name to 'students' to match your filter logic below
+        {
+        firstName: "lebron", 
+        lastName: "james",
+        address: "Antipolo",
+        },
+        {
+        firstName: "cade",
+        lastName: "cunningham",
+        address: "Marikina",
+        },
+       ];
+
+    //     students.forEach((s) => {
+    //     console.log(`${s.firstName} ${s.lastName} he lives in ${s.address}`
+    //     );
+    //    });
+
+    //    const lebron = students.find((st) => {
+    //     if  (st.firstName === "lebron"){ 
+    //         return true; // Fixed: find needs a true/false return
+    //     } else { 
+    //         return false;
+    //     }
+    // });
+    
+    // console.log(
+    //     `Found ${lebron.firstName} ${lebron.lastName} who lives in ${lebron.address}`)
+    
+
+        const studentsFromAntipolo = students.filter(
+            (student) => student.address === "Antipolo",
+        );
+
+        const studentsFromMarikina = students.filter(
+            (student) => student.address === "Marikina",
+        );
+
+        console.log("students from Marikina");
+        studentsFromMarikina.forEach((student) =>
+            console.log(`${student.firstName} ${student.lastName}`) // Fixed syntax: replaced } with )
+        );
+
+    // ternary 
+    const hasStudentsFromAntipolo = studentsFromAntipolo ? true : false;
+    console.log(hasStudentsFromAntipolo);
+
+    studentsFromAntipolo
+        ? console.log("there are students from Antipolo")
+        : "there are no students from Antipolo";
+    </script>
+</body>
+</html>
